@@ -9,7 +9,7 @@ O **S & T Station** é uma plataforma web inovadora dedicada à partilha, organi
 - **Exploração de Biblioteca**: Aceda a uma vasta colecção de partituras e cifras, organizadas por instrumento, compositor e nível de dificuldade.
 - **Upload de Documentos Musicais**: Carregue ficheiros nos formatos PDF, MusicXML, SVG e outros, tornando-os imediatamente disponíveis para visualização e partilha.
 - **Visualização Integrada**: Visualize partituras directamente na aplicação, com suporte a diferentes formatos e dispositivos.
-- **Interacção Social**: Comente, avalie, favorite e adicione partituras a playlists personalizadas.
+- **Interação Social**: Comente, avalie, favorite e adicione partituras a playlists personalizadas.
 - **Gestão de Playlists**: Crie e organize playlists para estudo, prática ou partilha com outros utilizadores.
 - **Conversão de Formatos**: Utilize o serviço integrado para converter ficheiros para o formato MEI, facilitando a interoperabilidade com outros softwares musicais.
 
