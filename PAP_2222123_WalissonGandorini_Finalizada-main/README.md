@@ -1,51 +1,48 @@
-# S & T STATION
+# S & T Station
 
 ## Descrição
 
-O **S & T STATION** é uma aplicação web desenvolvida para facilitar o acesso, upload, visualização e gestão de partituras e cifras musicais. A aplicação permite que os utilizadores explorem uma vasta biblioteca de partituras/cifras, façam upload de ficheiros, visualizem partituras em diferentes formatos.
+O **S & T Station** é uma plataforma web inovadora dedicada à partilha, organização e acesso a partituras e cifras musicais. O projecto visa apoiar músicos, estudantes e professores, proporcionando um ambiente digital seguro e eficiente para explorar, carregar, visualizar e gerir documentos musicais em diversos formatos.
 
 ## Funcionalidades Principais
 
-- **Explorar Biblioteca**: Aceda a uma vasta coleção de partituras organizadas por instrumentos, compositores e dificuldade.
-- **Upload de Partituras**: Carregue ficheiros nos formatos PDF, MusicXML ou SVG e visualize-os diretamente na aplicação.
-- **Visualização de Partituras**: Utilize o visualizador integrado para explorar partituras em detalhe.
-- **Interação Social**: Comente, avalie e guarde partituras como favoritas.
-- **Conversão de Formatos**: Converta ficheiros para o formato MEI utilizando o serviço de conversão integrado.
+- **Exploração de Biblioteca**: Aceda a uma vasta colecção de partituras e cifras, organizadas por instrumento, compositor e nível de dificuldade.
+- **Upload de Documentos Musicais**: Carregue ficheiros nos formatos PDF, MusicXML, SVG e outros, tornando-os imediatamente disponíveis para visualização e partilha.
+- **Visualização Integrada**: Visualize partituras directamente na aplicação, com suporte a diferentes formatos e dispositivos.
+- **Interacção Social**: Comente, avalie, favorite e adicione partituras a playlists personalizadas.
+- **Gestão de Playlists**: Crie e organize playlists para estudo, prática ou partilha com outros utilizadores.
+- **Conversão de Formatos**: Utilize o serviço integrado para converter ficheiros para o formato MEI, facilitando a interoperabilidade com outros softwares musicais.
 
-## Estrutura do Projeto
+## Estrutura do Projecto
 
-A estrutura do projeto está organizada da seguinte forma:
+A estrutura do projecto está organizada da seguinte forma:
 
 ```
-project/
-├── src/
-│   ├── components/       # Componentes reutilizáveis da interface
-│   ├── pages/            # Páginas principais da aplicação
-│   ├── store/            # Gestão de estado com Zustand
-│   ├── lib/              # Serviços e integrações (e.g., Supabase)
-│   ├── context/          # Contextos globais (e.g., tema)
-│   ├── types/            # Definições de tipos TypeScript
-│   ├── index.css         # Estilos globais
-│   ├── main.tsx          # Ponto de entrada da aplicação
-│   └── theme.ts          # Configuração de tema com Material-UI
-├── public/               # Recursos públicos (imagens, ícones, etc.)
-├── conversion-service/   # Serviço de conversão de ficheiros
-├── supabase/             # Configuração e funções do Supabase
-└── vite.config.ts        # Configuração do Vite
+PAP_2222123_WalissonGandorini_Finalizada-main/
+├── audiveris-5.5.3/           # Ferramentas e scripts auxiliares para análise musical
+├── data/                      # Exemplos e dados de partituras
+├── docs/                      # Documentação adicional
+├── project/                   # Aplicação principal (frontend e backend)
+│   ├── src/                   # Código-fonte React/TypeScript
+│   ├── backend/               # Scripts e API Python (FastAPI)
+│   ├── public/                # Recursos públicos (imagens, ícones, etc.)
+│   ├── supabase/              # Configuração e funções do Supabase
+│   └── ...
+├── README.md                  # Este ficheiro
+└── ...
 ```
 
 ## Tecnologias Utilizadas
 
-- **Frontend**: React, TypeScript, Material-UI, TailwindCSS
-- **Backend**: Node.js, Supabase (Base de Dados e Armazenamento)
-- **Ferramentas de Build**: Vite
+- **Frontend**: React (com TypeScript), Material-UI (MUI), TailwindCSS, Framer Motion
+- **Backend**: FastAPI (Python), Node.js (Express para microserviços), Supabase (Base de Dados, Autenticação, Armazenamento, Realtime)
+- **Build e Ferramentas**: Vite
 
 ## Pré-requisitos
 
-Certifique-se de que tem as seguintes ferramentas instaladas:
-
 - Node.js (v16 ou superior)
 - npm ou yarn
+- Python 3.9+
 - Supabase CLI (opcional, para gestão local do Supabase)
 
 ## Instalação
@@ -54,12 +51,13 @@ Certifique-se de que tem as seguintes ferramentas instaladas:
 
    ```bash
    git clone <URL_DO_REPOSITORIO>
-   cd <NOME_DO_DIRETORIO>
+   cd <NOME_DA_PASTA>
    ```
 
-2. Instale as dependências:
+2. Instale as dependências do frontend:
 
    ```bash
+   cd project
    npm install
    # ou
    yarn install
@@ -75,27 +73,33 @@ Certifique-se de que tem as seguintes ferramentas instaladas:
    yarn dev
    ```
 
+5. (Opcional) Para funcionalidades backend em Python, instale as dependências:
+
+   ```bash
+   cd backend
+   pip install -r requirements.txt
+   ```
 
 ## Scripts Disponíveis
 
-- `npm run dev`: Inicia o servidor de desenvolvimento.
+- `npm run dev`: Inicia o servidor de desenvolvimento React.
 - `npm run build`: Gera a build de produção.
 - `npm run preview`: Pré-visualiza a build de produção.
 
 ## Contribuição
 
-Contribuições são bem-vindas! Siga os passos abaixo para contribuir:
+Contribuições são bem-vindas. Para contribuir:
 
-1. Faça um fork do repositório.
-2. Crie uma branch para a sua funcionalidade ou correção: `git checkout -b minha-feature`.
+1. Faça fork do repositório.
+2. Crie uma branch para a sua funcionalidade ou correcção: `git checkout -b minha-feature`.
 3. Faça commit das suas alterações: `git commit -m 'Adiciona nova funcionalidade'`.
 4. Envie as alterações: `git push origin minha-feature`.
 5. Abra um Pull Request.
 
 ## Licença
 
-Este projeto está licenciado sob a licença MIT. Consulte o ficheiro `LICENSE` para mais informações.
+Este projecto está licenciado sob a licença MIT. Consulte o ficheiro `LICENSE` para mais informações.
 
 ---
 
-**Nota**: Para dúvidas ou suporte, entre em contacto com o administrador do repositório.
+**Nota**: Para dúvidas ou suporte, contacte o administrador do repositório.
