@@ -2,20 +2,19 @@
 
 ## Descrição
 
-O **S & T Station** é uma plataforma web inovadora dedicada à partilha, organização e acesso a partituras e cifras musicais. O projecto visa apoiar músicos, estudantes e professores, proporcionando um ambiente digital seguro e eficiente para explorar, carregar, visualizar e gerir documentos musicais em diversos formatos.
+O **S & T Station** é uma plataforma web inovadora dedicada à partilha, organização e acesso a partituras e cifras musicais. O projecto visa apoiar músicos, alunos e professores, proporciona um ambiente digital seguro e eficiente para explorar, carregar, visualizar e gerir documentos musicais em diversos formatos.
 
 ## Funcionalidades Principais
 
 - **Exploração de Biblioteca**: Aceda a uma vasta colecção de partituras e cifras, organizadas por instrumento, compositor e nível de dificuldade.
-- **Upload de Documentos Musicais**: Carregue ficheiros nos formatos PDF, MusicXML, SVG e outros, tornando-os imediatamente disponíveis para visualização e partilha.
+- **Upload de Documentos Musicais**: Carregue ficheiros nos formatos PDF, SVG, PNG e outros, tornando-os imediatamente disponíveis para visualização e partilha.
 - **Visualização Integrada**: Visualize partituras directamente na aplicação, com suporte a diferentes formatos e dispositivos.
-- **Interacção Social**: Comente, avalie, favorite e adicione partituras a playlists personalizadas.
-- **Gestão de Playlists**: Crie e organize playlists para estudo, prática ou partilha com outros utilizadores.
-- **Conversão de Formatos**: Utilize o serviço integrado para converter ficheiros para o formato MEI, facilitando a interoperabilidade com outros softwares musicais.
+- **Interacção Social**: avalie, favorite e adicione partituras a playlists personalizadas.
+- **Gestão de Playlists**: Crie e organize playlists para estudo e pratica.
 
 ## Estrutura do Projecto
 
-A estrutura do projecto está organizada da seguinte forma:
+A estrutura do projeto está organizada da seguinte forma:
 
 ```
 PAP_2222123_WalissonGandorini_Finalizada-main/
@@ -73,12 +72,25 @@ PAP_2222123_WalissonGandorini_Finalizada-main/
    yarn dev
    ```
 
-5. (Opcional) Para funcionalidades backend em Python, instale as dependências:
+5. Para funcionalidades backend em Python, seiga esses passos:
 
    ```bash
    cd backend
+   .\venv\Scripts\activate
    pip install -r requirements.txt
+   uvicorn main:app --reload --host 0.0.0.0 --port 8000   
    ```
+   Para parar de rodar o backend, no terminal basta fazer "CTRL+C". 
+   Se prentender sair do ambiente virtual 'venv' - "deactivate"
+
+6. Para rodar o microserviço em Node.js,
+
+ ```bash
+ cd src/components
+ node delete_user_service.js
+ ```
+ Para parar de rodar o backend, no terminal basta fazer "CTRL+C". 
+ 
 
 ## Scripts Disponíveis
 
@@ -98,7 +110,7 @@ Contribuições são bem-vindas. Para contribuir:
 
 ## Licença
 
-Este projecto está licenciado sob a licença MIT. Consulte o ficheiro `LICENSE` para mais informações.
+Este projeto está licenciado sob a licença MIT. Consulte o ficheiro `LICENSE` para mais informações.
 
 ---
 
