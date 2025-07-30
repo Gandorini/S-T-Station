@@ -60,13 +60,15 @@ export default function SettingsSidebar({ open, onClose }: SettingsSidebarProps)
   const handleDeleteProfile = async () => {
     setShowDeleteProfile(false);
     try {
-      if (!user?.id) throw new Error('Utilizador não autenticado.');
+      const { data: { session } } = await supabase.auth.getSession();
+      if (!session) throw new Error('Utilizador não autenticado.');
 
-      const headers: HeadersInit = { 'x-user-id': user.id };
       const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8000';
-      const res = await fetch(`${apiUrl}/profile`, {
+      const res = await fetch(`${apiUrl}/users/me`, {
         method: 'DELETE',
-        headers,
+        headers: {
+          'Authorization': `Bearer ${session.access_token}`,
+        },
       });
 
       if (res.ok) {
@@ -76,8 +78,8 @@ export default function SettingsSidebar({ open, onClose }: SettingsSidebarProps)
         setSnackbarOpen(true);
         setTimeout(() => navigate('/'), 1500);
       } else {
-        const errorText = await res.text();
-        throw new Error(errorText || 'Erro ao apagar conta. Tente novamente.');
+        const errorData = await res.json();
+        throw new Error(errorData.detail || 'Erro ao apagar conta. Tente novamente.');
       }
     } catch (err) {
       const message = err instanceof Error ? err.message : 'Ocorreu um erro ao apagar conta.';

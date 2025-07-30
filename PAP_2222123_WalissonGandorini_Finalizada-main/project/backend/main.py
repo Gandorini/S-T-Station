@@ -138,26 +138,44 @@ def analyze_technical_difficulty(score: stream.Score) -> float:
     
     return min(max(difficulty, 0), 1)
 
-@app.delete("/profile")
-async def delete_profile(request: Request):
-    user_id = request.headers.get("x-user-id")
-    if not user_id:
-        raise HTTPException(status_code=401, detail="Utilizador não autenticado")
-    SUPABASE_URL = os.environ.get("SUPABASE_URL")
-    SUPABASE_KEY = os.environ.get("SUPABASE_ANON_KEY")
-    supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
-    supabase.table("profiles").delete().eq("id", user_id).execute()
+from sheets_crud import get_current_user # Import the dependency
+from functools import lru_cache
 
-    # Chamar microserviço Node.js para apagar de auth.users
-    try:
-        resp = requests.post("http://localhost:4000/delete-user", json={"user_id": user_id}, timeout=10)
-        if resp.status_code != 200:
-            raise Exception(resp.json().get("error", "Erro desconhecido ao apagar de auth.users"))
-    except Exception as e:
-        # Opcional: podes logar o erro mas não impedir o fluxo
-        print("Erro ao apagar de auth.users:", e)
+@lru_cache()
+def get_supabase_admin_client():
+    """Create and return a Supabase admin client for privileged operations."""
+    url = os.environ.get("SUPABASE_URL")
+    secret_key = os.environ.get("SUPABASE_ROLE_KEY")
+    if not url or not secret_key:
+        raise ValueError("Supabase URL and Service Role Key must be set.")
+    return create_client(url, secret_key)
 
-    return {"ok": True}
+@app.delete("/users/me")
+def delete_current_user(user: dict = Depends(get_current_user)):
+    """
+    Deletes the currently authenticated user's profile and auth record.
+    This is a protected endpoint.
+    """
+    user_id = user["id"]
+    supabase_admin = get_supabase_admin_client()
+
+    # 1. Delete the user's profile from the public `profiles` table
+    # We can use the admin client for this, or the regular one. Admin is fine.
+    profile_response = supabase_admin.table("profiles").delete().eq("id", user_id).execute()
+
+    if profile_response.error and profile_response.error.code != 'PGRST116': # Ignore if profile not found
+        print(f"Could not delete profile for user {user_id}: {profile_response.error.message}")
+        # Decide if you want to stop or continue. We'll continue.
+
+    # 2. Delete the user from `auth.users`
+    # This requires the admin client.
+    auth_response = supabase_admin.auth.admin.delete_user(user_id)
+
+    if auth_response.error:
+        # If this fails, it's a more serious problem.
+        raise HTTPException(status_code=500, detail=f"Failed to delete user from authentication system: {auth_response.error.message}")
+
+    return {"ok": True, "message": "User and profile deleted successfully."}
 
 app.include_router(sheets_router)
 app.include_router(sheet_validation_router)

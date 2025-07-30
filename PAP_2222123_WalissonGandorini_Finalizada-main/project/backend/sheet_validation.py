@@ -28,10 +28,10 @@ SUPABASE_KEY = os.getenv("SUPABASE_ANON_KEY")
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 # Configurações do Azure Custom Vision
-ENDPOINT = "https://westeurope.api.cognitive.microsoft.com/"
-PREDICTION_KEY = "766d399db6b3416388ea24beb1e8da70"
-PROJECT_ID = "3eff9248-d5db-4744-a439-a7c27050f639"
-PUBLISH_ITERATION_NAME = "Iteration4"  # Nome exato da iteração publicada
+ENDPOINT = os.getenv("AZURE_ENDPOINT", "https://westeurope.api.cognitive.microsoft.com/")
+PREDICTION_KEY = os.getenv("AZURE_PREDICTION_KEY")
+PROJECT_ID = os.getenv("AZURE_PROJECT_ID")
+PUBLISH_ITERATION_NAME = os.getenv("AZURE_PUBLISH_ITERATION_NAME")
 
 
 def run_audiveris_docker(input_path, output_dir):
