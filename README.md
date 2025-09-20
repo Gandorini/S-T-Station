@@ -1,4 +1,7 @@
-# S-T-Station
+<img width="1250" height="1250" alt="LogoBlack (1)" src="https://github.com/user-attachments/assets/589dbbf5-9df1-41d9-813a-e37ad1a2f3b3" />
+
+# S-T-Station 
+
 
 ## Project Title & Description
 
@@ -10,14 +13,20 @@ This repository seems to contain a web platform dedicated to sharing, organizing
 *   **Organization:** Documents organized by instrument, composer, and other relevant criteria.
 *   **Accessibility:** A digital environment to explore, upload, view, and manage musical documents.
 *   **Optical Music Recognition (OMR):** Functionality through the inclusion of Audiveris.
-*   **Bug Reporting:** Issue template included for bug reports.
 
 ## Prerequisites & Dependencies
 
-*   **Languages:** C, C++, Java, JavaScript, Python, TypeScript
-*   **Frameworks:** Python Framework, Ruby Framework
-*   **Tools & Technologies:** GitHub Actions, Node.js
+*   **Languages:** React.js, Python, TypeScript
+*   **Frameworks:** Python Framework, Vite Framework
+*   **Tools & Technologies:** Node.js
 *   Audiveris 5.5.3
+
+
+
+## Landing Page 
+
+<img width="1849" height="983" alt="image" src="https://github.com/user-attachments/assets/d4655305-0b09-4746-94a0-d6805ee7f2aa" />
+
 
 ## Installation & Setup Instructions
 
@@ -87,6 +96,7 @@ Please follow the existing code style and conventions.
 ## License Information
 
 License information is available within `/audiveris-5.5.3/LICENSE`. Please review this file for details about the licensing terms. If no license is specified for the root repository, it defaults to all rights reserved by the owner.
+
 
 ## Acknowledgments (if relevant)
 
