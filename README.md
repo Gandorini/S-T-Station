@@ -5,7 +5,7 @@
 
 ## Project Title & Description
 
-This repository seems to contain a web platform dedicated to sharing, organizing, and accessing sheet music and musical notations. The goal is to support musicians, students, and teachers by providing a secure and efficient digital environment to explore, upload, view, and manage musical documents in various formats. It also includes Audiveris, an Open-source Optical Music Recognition (OMR) application.
+The goal is to support musicians, students, and teachers by providing a secure and efficient digital environment to explore, upload, view, and manage musical documents in various formats. It also includes Audiveris, an Open-source Optical Music Recognition (OMR) application.
 
 ## Key Features & Benefits
 
