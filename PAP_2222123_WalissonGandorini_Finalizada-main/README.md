@@ -69,9 +69,6 @@ Due to limited information and the mixed nature of the repository, a detailed st
 7.  **Set up Audiveris:**
     Follow Audiveris specific installation from the source.
 
-## Usage Examples & API Documentation (if applicable)
-
-This section would typically include code snippets or API endpoint examples. Since no specific API is defined in the provided README or file structure, it's impossible to provide accurate usage examples without more context. However, this area would be filled if the project was better documented. Consult any internal documentation for specific API or usage instructions.
 
 ## Configuration Options
 
