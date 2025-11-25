@@ -1,117 +1,105 @@
-# S & T Station
+<img width="1250" height="1250" alt="LogoBlack (1)" src="https://github.com/user-attachments/assets/589dbbf5-9df1-41d9-813a-e37ad1a2f3b3" />
 
-## Descrição
+# S-T-Station 
 
-O **S & T Station** é uma plataforma web inovadora dedicada à partilha, organização e acesso a partituras e cifras musicais. O projecto visa apoiar músicos, alunos e professores, proporciona um ambiente digital seguro e eficiente para explorar, carregar, visualizar e gerir documentos musicais em diversos formatos.
 
-## Funcionalidades Principais
+## Project Title & Description
 
-- **Exploração de Biblioteca**: Aceda a uma vasta colecção de partituras e cifras, organizadas por instrumento, compositor e nível de dificuldade.
-- **Upload de Documentos Musicais**: Carregue ficheiros nos formatos PDF, SVG, PNG e outros, tornando-os imediatamente disponíveis para visualização e partilha.
-- **Visualização Integrada**: Visualize partituras directamente na aplicação, com suporte a diferentes formatos e dispositivos.
-- **Interacção Social**: avalie, favorite e adicione partituras a playlists personalizadas.
-- **Gestão de Playlists**: Crie e organize playlists para estudo e pratica.
+The goal is to support musicians, students, and teachers by providing a secure and efficient digital environment to explore, upload, view, and manage musical documents in various formats. It also includes Audiveris, an Open-source Optical Music Recognition (OMR) application.
 
-## Estrutura do Projecto
+## Key Features & Benefits
 
-A estrutura do projeto está organizada da seguinte forma:
+*   **Sheet Music Library:** A comprehensive collection of sheet music and musical notations.
+*   **Organization:** Documents organized by instrument, composer, and other relevant criteria.
+*   **Accessibility:** A digital environment to explore, upload, view, and manage musical documents.
+*   **Optical Music Recognition (OMR):** Functionality through the inclusion of Audiveris.
 
-```
-PAP_2222123_WalissonGandorini_Finalizada-main/
-├── audiveris-5.5.3/           # Ferramentas e scripts auxiliares para análise musical
-├── data/                      # Exemplos e dados de partituras
-├── docs/                      # Documentação adicional
-├── project/                   # Aplicação principal (frontend e backend)
-│   ├── src/                   # Código-fonte React/TypeScript
-│   ├── backend/               # Scripts e API Python (FastAPI)
-│   ├── public/                # Recursos públicos (imagens, ícones, etc.)
-│   ├── supabase/              # Configuração e funções do Supabase
-│   └── ...
-├── README.md                  # Este ficheiro
-└── ...
-```
+## Prerequisites & Dependencies
 
-## Tecnologias Utilizadas
+*   **Languages:** React.js, Python, TypeScript
+*   **Frameworks:** Python Framework, Vite Framework
+*   **Tools & Technologies:** Node.js
+*   Audiveris 5.5.3
 
-- **Frontend**: React (com TypeScript), Material-UI (MUI), TailwindCSS, Framer Motion
-- **Backend**: FastAPI (Python), Node.js (Express para microserviços), Supabase (Base de Dados, Autenticação, Armazenamento, Realtime)
-- **Build e Ferramentas**: Vite
 
-## Pré-requisitos
 
-- Node.js (v16 ou superior)
-- npm ou yarn
-- Python 3.9+
-- Supabase CLI (opcional, para gestão local do Supabase)
+## Landing Page 
 
-## Instalação
+<img width="1849" height="983" alt="image" src="https://github.com/user-attachments/assets/d4655305-0b09-4746-94a0-d6805ee7f2aa" />
 
-1. Clone o repositório:
 
-   ```bash
-   git clone <URL_DO_REPOSITORIO>
-   cd <NOME_DA_PASTA>
-   ```
+## Installation & Setup Instructions
 
-2. Instale as dependências do frontend:
+Due to limited information and the mixed nature of the repository, a detailed step-by-step installation guide cannot be provided. However, you can follow these general steps based on the information available:
 
-   ```bash
-   cd project
-   npm install
-   # ou
-   yarn install
-   ```
+1.  **Clone the Repository:**
 
-3. Configure as variáveis de ambiente no ficheiro `.env` com as credenciais do Supabase.
+    ```bash
+    git clone https://github.com/Gandorini/S-T-Station.git
+    cd S-T-Station
+    ```
 
-4. Inicie o servidor de desenvolvimento:
+2.  **Install Node.js Dependencies:**
 
-   ```bash
-   npm run dev
-   # ou
-   yarn dev
-   ```
+    If the web platform uses Node.js, install the dependencies:
 
-5. Para funcionalidades backend em Python, seiga esses passos:
+    ```bash
+    npm install
+    ```
 
-   ```bash
-   cd backend
-   .\venv\Scripts\activate
-   pip install -r requirements.txt
-   uvicorn main:app --reload --host 0.0.0.0 --port 8000   
-   ```
-   Para parar de rodar o backend, no terminal basta fazer "CTRL+C". 
-   Se prentender sair do ambiente virtual 'venv' - "deactivate"
+3.  **Install Audiveris:**
 
-6. Para rodar o microserviço em Node.js,
+    Refer to the Audiveris documentation within the `/audiveris-5.5.3/` directory, particularly the `README.md` file in that directory, for installation instructions. This is a separate application that may require its own specific installation steps.
 
- ```bash
- cd src/components
- node delete_user_service.js
- ```
- Para parar de rodar o backend, no terminal basta fazer "CTRL+C". 
- 
+4.  **Configure Environment Variables:**
+    Check if the project requires any environment variables. Create a `.env` file in the root directory, if necessary.
 
-## Scripts Disponíveis
+5.  **Build the Project:**
 
-- `npm run dev`: Inicia o servidor de desenvolvimento React.
-- `npm run build`: Gera a build de produção.
-- `npm run preview`: Pré-visualiza a build de produção.
+    ```bash
+    npm run build # Or similar command, depending on your project's build process
+    ```
 
-## Contribuição
+6.  **Start the Application:**
 
-Contribuições são bem-vindas. Para contribuir:
+    ```bash
+    npm start # Or similar command to start the application
+    ```
 
-1. Faça fork do repositório.
-2. Crie uma branch para a sua funcionalidade ou correcção: `git checkout -b minha-feature`.
-3. Faça commit das suas alterações: `git commit -m 'Adiciona nova funcionalidade'`.
-4. Envie as alterações: `git push origin minha-feature`.
-5. Abra um Pull Request.
+7.  **Set up Audiveris:**
+    Follow Audiveris specific installation from the source.
 
-## Licença
+## Usage Examples & API Documentation (if applicable)
 
-Este projeto está licenciado sob a licença MIT. Consulte o ficheiro `LICENSE` para mais informações.
+This section would typically include code snippets or API endpoint examples. Since no specific API is defined in the provided README or file structure, it's impossible to provide accurate usage examples without more context. However, this area would be filled if the project was better documented. Consult any internal documentation for specific API or usage instructions.
 
----
+## Configuration Options
 
-**Nota**: Para dúvidas ou suporte, contacte o administrador do repositório.
+Configuration options are not specified in the provided files. Typical configuration options might involve:
+
+*   **Database connection settings** (if a database is used).
+*   **API keys** for external services.
+*   **Port numbers** for the web server.
+
+These settings are often managed through environment variables or configuration files.
+
+## Contributing Guidelines
+
+1.  **Fork the repository.**
+2.  **Create a new branch for your feature or bug fix.**
+3.  **Make your changes and commit them with clear, descriptive messages.**
+4.  **Test your changes thoroughly.**
+5.  **Submit a pull request to the main branch.**
+
+Please follow the existing code style and conventions.
+
+## License Information
+
+License information is available within `/audiveris-5.5.3/LICENSE`. Please review this file for details about the licensing terms. If no license is specified for the root repository, it defaults to all rights reserved by the owner.
+
+
+## Acknowledgments (if relevant)
+
+*   [Katka](https://www.facebook.com/katkastreetart/) for the Audiveris logo.
+*   Audiveris developers for their OMR software.
+
